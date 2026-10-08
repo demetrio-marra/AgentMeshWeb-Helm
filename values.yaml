@@ -1,0 +1,39 @@
+replicaCount: 1
+
+image:
+  repository: registry.gitlab.com/demetrio-marra/agentmeshweb-ci/docker_image
+  tag: latest
+  pullPolicy: IfNotPresent
+
+imagePullSecrets:
+  - name: gitlab-registry-secret
+
+service:
+  type: ClusterIP
+  port: 8080
+
+environment: Production
+
+config:
+  Logging:
+    LogLevel:
+      Default: Warning
+      Microsoft.AspNetCore: Warning
+  Api:
+    BaseUrl: ""
+    HeaderName: X-Api-Key
+  ConversationSummarization:
+    SummaryTokenThreshold: 10000
+    NumMessageToPreseve: 6
+    SummarizeLanguage: Italian
+  ChatContext:
+    IdleExpirationMinutes: 120
+
+resources: {}
+
+podSecurityContext: {}
+containerSecurityContext: {}
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

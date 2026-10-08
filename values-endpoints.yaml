@@ -1,0 +1,4 @@
+config:
+  Api:
+    BaseUrl: https://amcodepipeline.dem-k8s.home/
+    HeaderName: X-Api-Key
