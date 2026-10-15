@@ -1,3 +1,3 @@
 environment: 'Production'
 image:
-  tag: 'fb8e31c1.6'
+  tag: 'fb8e31c1.7'
